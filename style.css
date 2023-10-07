@@ -64,15 +64,15 @@ body{
     cursor: pointer;
 }
 
-.row .operator, .number, .equal-sign, .decimal{
+.row .operator, .number, .equal-sign, .decimal, .negative{
     flex-basis: 100%;
 }
 
-.row .clear{
-    flex-basis: 207%;
+.negative{
+    font-size: 1rem !important;
 }
 
-.row .zero-btn{
+.row .clear{
     flex-basis: 207%;
 }
 

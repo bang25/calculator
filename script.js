@@ -4,6 +4,7 @@ const operator = document.querySelectorAll(".operator");
 const result = document.querySelector(".equal-sign");
 const reset = document.querySelector(".clear");
 const decimal = document.querySelector(".decimal");
+const negative = document.querySelector(".negative");
 
 
 // membuat tampilan lawar awal kalkulator menjadi 0, namun ketika kita memasukkan angka maka tampilan akan berubah
@@ -17,7 +18,7 @@ const updateScreenNumber = (number) => {
 
 // mengubah operator supaya hanya menggunakan 1 operator
 const updateScreenOperator = (operator) => {
-    if(/[-+*\/%]/.test(screen.value[screen.value.length-1])){
+    if(/[+*\/%]/.test(screen.value[screen.value.length-1])){
         screen.value = screen.value.slice(0, -1) + operator; //-1 pada slice berarti mengakses karakter terakhir
     }else{
         screen.value += operator;
@@ -33,6 +34,12 @@ const updateScreenOperator = (operator) => {
     //     screen.value += operator;
     // }
 }
+
+negative.addEventListener("click", () => {
+        screen.value =screen.value * -1;
+})
+
+
 
 
 // menambahkan event listener untuk setiap tombol sehingga kalkulator menampilkan angka ketika tombol di klik
@@ -65,7 +72,7 @@ reset.addEventListener("click", () => {
 
 // mendeklarasikan bilangan desimal, kita menambahkan logika supaya titik hanya diproses 1 kali
 decimal.addEventListener("click", () => {
-    if(/\./.test(screen.value[screen.value.length-1])){
+    if(/[\.]/.test(screen.value[screen.value.length-1])){
         screen.value = screen.value.slice(0, -1) + ".";
     }else{
         screen.value += ".";
