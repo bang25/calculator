@@ -65,7 +65,7 @@ reset.addEventListener("click", () => {
 
 // mendeklarasikan bilangan desimal, kita menambahkan logika supaya titik hanya diproses 1 kali
 decimal.addEventListener("click", () => {
-    if (!screen.value.includes(".")) { 
-    screen.value += ".";
+    if(screen.value.indexOf(".") === -1){
+        screen.value += ".";
     }
 })
